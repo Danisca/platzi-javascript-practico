@@ -1,10 +1,10 @@
 
 //Trabajar con cuadrados
-    function squearePeremeter(side){
-        return 4 * side;
+    function squearePeremeter(side1,side2){
+        return 4 * side1,side2;
     }
-    function squareArea(side){
-        return Math.pow(side, 2);
+    function squareArea(side1,side2){
+        return Math.pow(side1,side2, 2);
     }
 
 //Trabajar con rectangulos
@@ -21,8 +21,15 @@
         return side1 + side2 + side3;
     }
 
-    function rectangleArea(base, height){
+    function triangleArea(base, height){
         return base * height * 1/2;
+    }
+
+    //calcular altura de triangulo isosceles
+    function triangleHeight(side1,side2, base){
+        if(side1 === side2 && side1 != base){
+            return Number.parseFloat(Math.sqrt(Math.pow(side1,2)- (Math.pow(base,2) / 4)).toFixed(2));
+        }
     }
 
 //Trabajar con el triangulo
