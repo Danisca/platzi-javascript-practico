@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./figuras.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav">
+        <p>Curso Practico de JavaScript Taller #1</p>
+    </nav>
+    <header class="header">
+        <h2>Geometria:</h2>
+        <p>La geometría es una rama de las matemáticas que se dedica al estudio de las figuras en un plano o espacio. Así, analiza sus características y medidas como el perímetro, área y volumen.</p>
+    </header>
+    <main class="main">
+        
+        <section class="square">
+            <div class="theory">
+                <h2 class="theory-title">Cuadrado</h2>
+                <div class="theory-body">
+                    <p>
+                        <strong>Definición:</strong>
+                        Un cuadrado es una figura geométrica 
+                        plana que consiste en 
+                        cuatro puntos unidos por 
+                        segmentos de igual medida, 
+                        que encierran una región del plano, 
+                        formando ángulos rectos.<br><br>
+                        <strong>Propiedades: </strong>
+                        Por ser cuadrilátero, hereda las 
+                        siguientes propiedades:<br><br>
+                        1) Tiene solo dos diagonales.<br><br>
+                        2) Sus ángulos internos suman 360°.
+                        <br><br>
+                        <strong>
+                            Formulario: 
+                        </strong>
+                        <br><br>
+                        Perímetro:&nbsp;  p= &nbsp;4 . a
+                        <br><br>
+                        Área: &nbsp;A=&nbsp; a ^ 2
+                        <br><br>
+                        <i>donde "a" es un lado cualquiera del cuadrado.</i>
+                    </p>
+                    <figure>   
+                        <img src="./img/240px-IconoCuadrado.svg.png" alt="">
+                        <!-- <figcaption>Cuadrado</figcaption> -->
+                    </figure>
+                </div>
+            </div>
+            <form action="#" class="form">
+            <!-- <div class="img img-square">
+
+            </div> -->
+            <h3  class="title">
+                Calcula el area y el perimetro de un cuadrado.
+            </h3>
+                <label for="square-sides">
+                    Escribe cuanto miden los lados de tu cuadrado:
+                </label>
+                <input type="number" name="square-sides" id="square-sides">
+                <div class="buttons">
+                    <button type="button" name="btn-square-perimeter" id="btn-square-perimeter">
+                        Calcular perimetro
+                    </button>
+                    <button type="button" id="btn-square-area" name="btn-square-area">
+                        Calcular Area
+                    </button>
+                </div>
+                <div class="result-container">
+                    <div id="square-perimeter-result">
+                        
+                    </div>
+                    <div id="square-area-result">
+                        
+                    </div>
+
+                </div>
+            </form>
+        </section>
+        <section class="circle">
+            <div class="theory">
+                <h2 class="theory-title">Circulo</h2>
+                <div class="theory-body">
+                    <p>
+                        <strong>Definición:</strong>
+                        El círculo es una región del plano 
+                        delimitada por una circunferencia y, 
+                        por tanto, tiene asociada un área.
+                        A veces se utiliza indistintamente círculo 
+                        por circunferencia siendo esta última su borde, 
+                        es decir, la curva perimetral que lo determina 
+                        y que solo posee longitud.<br><br>
+                        <strong>Propiedades: </strong>
+                        <br><br>
+                        1) Un ángulo central es el que tiene su 
+                        vértice en el centro del círculo.
+                        2) Un ángulo inscrito es el que tiene 
+                        su vértice sobre el borde del círculo 
+                        y cada lado determina una cuerda sobre 
+                        este.
+                        <br><br>
+                        <strong>
+                            Formulario: 
+                        </strong>
+                        <br><br>
+                        Perímetro:&nbsp;  p= &nbsp;2 . π . r
+                        <br><br>
+                        Área: &nbsp;A=&nbsp; π . r ^ 2
+                        <br><br>
+                        <i>donde "r" es el radio del circulo y donde "π" es la constante matematica.</i>
+                    </p>
+                    <figure>   
+                        <img src="./img/KreisMittelpunktRadius.svg" alt="">
+                        <!-- <figcaption>Cuadrado</figcaption> -->
+                    </figure>
+                </div>
+            </div>
+            <form action="#" class="form">
+            <!-- <div class="img img-circle">
+
+            </div> -->
+            <h3 class="title">
+                Calcula el area y el perimetro de un Circulo.
+            </h3>
+                <label for="circle-radius">
+                    Escribe cuanto mide el radio de tu circle
+                </label>
+                <input type="number" name="circle-radius" id="circle-radius">
+                <div class="buttons">
+                    <button type="button" id="btn-circle-perimeter" name="btn-circle-perimeter">
+                        Calcular perimetro
+                    </button>
+                    <button type="button" id="btn-circle-area" name="btn-circle-area">
+                        Calcular Area
+                    </button>
+                </div>
+                <div class="result-container">
+                    <div id="circle-perimeter-result">
+                        
+                    </div>
+                    <div id="circle-area-result">
+                        
+                    </div>
+
+                </div>
+            </form>
+        </section>
+        <section class="rectangle">
+            <div class="theory">
+                <h2 class="theory-title">Rectángulo</h2>
+                <div class="theory-body">
+                    <p>
+                        <strong>Definición:</strong>
+                        En geometría plana, un rectángulo es un 
+                        paralelogramo cuyos cuatro lados forman 
+                        ángulos rectos entre sí. 
+                        Los lados opuestos tienen la misma 
+                        longitud. Un rectángulo cuyos 
+                        cuatro lados tienen la misma 
+                        longitud es un cuadrado.<br><br>
+                        <strong>Propiedades: </strong>
+                        <br><br>
+                        1) Sus lados paralelos son iguales.<br><br>
+                        2) Las dos diagonales de un 
+                        rectángulo de lados h y b miden √ (h ^ 2 ) + (b ^ 2)
+                        <br><br>
+                        <strong>
+                            Formulario: 
+                        </strong>
+                        <br><br>
+                        Perímetro:&nbsp;  p= &nbsp;2 . (h + b)
+                        <br><br>
+                        Área: &nbsp;A=&nbsp; h * b
+                        <br><br>
+                        <i>donde "h" es la altura del rectangulo y donde "b" es la base.</i>
+                    </p>
+                    <figure>   
+                        <img src="./img/260px-IconoRectangulo.svg.png" alt="">
+                        <!-- <figcaption>Cuadrado</figcaption> -->
+                    </figure>
+                </div>
+            </div>
+            <form action="#" class="form">
+            <!-- <div class="img img-circle">
+
+            </div> -->
+            <h3 class="title">
+                Calcula el area y el perimetro de un Rectángulo.
+            </h3>
+                <label for="altura-rectangulo">
+                    Escribe cuanto mide la base de tu rectangulo:
+                </label>
+                <input  type="number" name="altura-rectangulo" id="altura-rectangulo">
+                <label for="base-rectangulo">
+                    Escribe cuanto mide el altura de tu rectangulo:
+                </label>
+                <input  type="number" name="base-rectangulo" id="base-rectangulo">
+                <div class="buttons">
+                    <button type="button" id="btn-rectangle-perimeter" name="btn-rectangle-perimeter">
+                        Calcular perimetro
+                    </button>
+                    <button type="button" id="btn-rectangle-area" name="btn-rectangle-area">
+                        Calcular Area
+                    </button>
+                </div>
+                <div class="result-container">
+                    <div id="rectangle-perimeter-result">
+                        
+                    </div>
+                    <div id="rectangle-area-result">
+                        
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./figuras.js"></script>
+</body>
+</html>

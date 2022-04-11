@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<path d="m125 125.01 85.922-51.161" stroke="#ed1c24" stroke-width="3"/>
+	<circle cx="125" cy="125" r="5" fill="#3f48cc"/>
+	<circle cx="125" cy="125" r="100" fill="none" stroke="#000" stroke-width="3"/>
+	<g font-family="FreeSans" font-size="18px">
+		<text fill="#3f48cc" x="122" y="146">M</text>
+		<text fill="#ed1c24" x="167" y="118">r</text>
+	</g>
+</svg>
