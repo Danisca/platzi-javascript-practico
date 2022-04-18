@@ -1,10 +1,10 @@
 
 //Trabajar con cuadrados
-    function squearePeremeter(side1,side2){
-        return 4 * side1,side2;
+    function squearePeremeter(side1){
+        return 4 * side1;
     }
-    function squareArea(side1,side2){
-        return Math.pow(side1,side2, 2);
+    function squareArea(side1){
+        return Math.pow(side1, 2);
     }
 
 //Trabajar con rectangulos
