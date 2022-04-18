@@ -47,10 +47,13 @@
 const btnSquarePerimeter = document.getElementById('btn-square-perimeter');
 
 btnSquarePerimeter.addEventListener("click",(e)=>{
-    // console.log(document.getElementById('square-sides').value);
-    const sideValue = parseInt(document.getElementById('square-sides').value);    
-    if(sideValue){
-        document.getElementById('square-perimeter-result').innerHTML = `El perimetro de tu cuadrado es = ${squearePeremeter(sideValue)}`;
+    // console.log(document.getElementById('square-s~~ides').value);
+    const squareSidesInput = document.getElementById('square-sides');
+    const squearePeremeterResult =  document.getElementById('square-perimeter-result');
+
+    if(squareSidesInput.value){
+        const sideValue = parseInt(squareSidesInput.value);    
+        squearePeremeterResult.innerHTML = `El perimetro de tu cuadrado es: ${squearePeremeter(sideValue)}`
     }
     // document.getElementById('area-result').innerHTML = "";
     // console.log(`result= ${squearePeremeter(sideValue)}`)
@@ -58,9 +61,11 @@ btnSquarePerimeter.addEventListener("click",(e)=>{
 
 const btnSquareArea = document.getElementById('btn-square-area');
 btnSquareArea.addEventListener("click", (e)=>{
-    const sideValue = parseInt(document.getElementById('square-sides').value);
-    if(sideValue){
-        document.getElementById("square-area-result").innerHTML = `El area de tu cuadrado es = ${squareArea(sideValue)}`;
+    const squareSides = document.getElementById('square-sides');
+    const squareAreaResult = document.getElementById("square-area-result");
+    if(squareSides.value){
+        const sideValue = parseInt(squareSides.value);
+        squareAreaResult.innerHTML = `El area de tu cuadrado es: ${squareArea(sideValue)}`;
     }
     // document.getElementById('perimeter-result').innerHTML = "";
 });
