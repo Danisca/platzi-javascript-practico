@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.nav{
+    height: 80px;
+    width: 100%;
+    background-color: darkcyan;
+    color: white;
+    border-bottom: 2px solid cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav p{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+
+}
+
+header{
+    margin:32px 0 0 12px;
+    padding: 0;
+    padding: 0 24px;
+}
+
+.title{
+    margin-bottom: 24px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid gainsboro;
+    box-shadow: lightgray 5px 6px 8px;
+    border-radius: 8px;
+    position: relative;
+    width: 30%;
+    margin: 32px auto;
+}
+
+/* .form label:nth-child(4){ 
+    display: block;
+    font-weight:400;
+    margin-bottom: 6px;
+    margin: 0 8px; 
+} */
+.form label{
+    display: block;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.form input{
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 1.2em;
+    border: 1px solid cadetblue;
+    padding-left: 12px;
+    margin: 12px 0;
+    height: 40px;
+    /* width: 50%; */
+}
+
+/* .form input:last-child{
+   margin-bottom: 0;
+} */
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons button{
+    height: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    background-color: cadetblue;
+    margin-top: 8px;
+}
+
+.result-container{
+    display: none;
+    border-bottom: 3px solid cadetblue;
+    border-radius: 6px;
+    margin: 32px 0;
+    padding: 12px;
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: cadetblue;
+}
+.result-container p{
+    padding: 0;
+    margin: 0;
+}
