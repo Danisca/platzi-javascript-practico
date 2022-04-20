@@ -26,6 +26,11 @@ header{
     padding: 0 24px;
 }
 
+.main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
 .title{
     margin-bottom: 24px;
 }
@@ -37,9 +42,9 @@ header{
     border: 1px solid gainsboro;
     box-shadow: lightgray 5px 6px 8px;
     border-radius: 8px;
-    position: relative;
-    width: 30%;
-    margin: 32px auto;
+    /* position: relative; */
+    /* width: 100%; */
+    margin: 32px;
 }
 
 /* .form label:nth-child(4){ 
