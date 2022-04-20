@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas de tendencia central | Taller #3
+    </title>
+    <link rel="stylesheet" href="./estadisticas.css">
+</head>
+<body>
+    <nav class="nav">
+        <p>Curso Practico de JavaScript Taller #3</p>
+    </nav>
+    <header class="header">
+        <h2>Medidas de tendencia central:</h2>
+        <p>Las medidas de tendencia central son parámetros estadísticos que informan sobre el centro de distribución de la muestra o la población estadística. En otras palabras, es un número que se ubica hacia el centro de la distribución de los valores de una serie de observaciones o medidas, en la que se encuentra localizado el conjunto de los datos.</p>
+    </header>
+    <main class="main">
+        <section class="media">
+            <div class="theory">
+                <h2 class="theory-title">Media Aritmetica</h2>
+                <div class="theory-body">
+                    <p>
+                        <strong>Definición:</strong>
+                        La media es la medida de tendencia 
+                        central más utilizada. Es el valor 
+                        promedio de un conjunto de datos 
+                        numéricos. Se calcula sumando el 
+                        total del conjunto de valores dividido
+                        entre el número total de valores, 
+                        es decir, el tamaño de la muestra.
+                    </p>
+                    <figure>   
+                        <img src="./img/media_aritmetica.webp" alt="">
+                        <!-- <figcaption>formula</figcaption> -->
+                    </figure>
+                </div>
+            </div>
+            <form action="#" class="form" id="frm-media">
+                <!-- <div class="img img-square">
+    
+                </div> -->
+                <h3  class="title">
+                    Calcula la media Aritmetica.
+                </h3>
+                    <label for="media-data">
+                        Carga tus datos en formato .csv:
+                    </label>
+                    <input type="file" name="media-data" id="media-data">
+                    <div class="buttons">
+                        <button type="button" name="btn-media" id="btn-media">
+                            Calcular la media
+                        </button>
+                    </div>
+                    <div class="result-container">
+                        <div id="media-result">
+                            
+                        </div>
+                    </div>
+                </form>
+        </section>
+    </main>
+    <script src="./estadisticas.js"></script>
+</body>
+</html>
