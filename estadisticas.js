@@ -21,6 +21,7 @@ btnMedia.addEventListener('click',()=>{
             const media = calculateMedia(dataNumber);
             // console.log(media);
             mediaResult.innerHTML = `<p> La media aritmetica de tus datos es: ${media}</p>`;
+            console.log(quickSort(dataNumber));
         }
         fileReader.readAsText(dataFile);
     }
@@ -37,8 +38,11 @@ function calculateMedia(data){
 }
 
 function processData(dataFile){
+    //convierte los datos obtenidos de un archivo .csv
+    //y devuelve los datos en un array de strings
     const data = [];
     dataFile.split(/\n/).map((lineStr)=>{
+        //el if conprueba que no este vacia la linea
         if(lineStr.length > 0 ){
             data.push(lineStr);
         }
@@ -47,6 +51,9 @@ function processData(dataFile){
 }
 
 function arrayToInt(arr){
+    //recibe un array de numero en tipo string
+    //retorna otro array pero con sus elementos convertidos a numero,
+    //especificamente a float
     const result = [];
     try {
         arr.forEach( (element) =>{
@@ -59,4 +66,23 @@ function arrayToInt(arr){
         console.log(error);
         return error;
     }
+}
+
+//algoritmo de ordenamiento
+function quickSort(arr){
+    if(arr.length < 1){
+        return [];
+    }
+    const pivot = arr[0];
+    const left = [];
+    const rigth = [];
+
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < pivot){
+            left.push(arr[i]);
+        }else if(arr[i] > pivot){
+            rigth.push(arr[i]);
+        }
+    }
+    return [].concat(quickSort(left), pivot, quickSort(rigth));
 }
