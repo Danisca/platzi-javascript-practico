@@ -27,6 +27,49 @@ btnMedia.addEventListener('click',()=>{
     }
 });
 
+const btnMediana = document.getElementById('btn-mediana');
+btnMediana.addEventListener('click',()=>{
+    const inputMedianaData = document.getElementById('mediana-data');
+    const medianaResult = document.getElementById('mediana-result');
+    if(inputMedianaData.files[0]){
+        const dataFile = inputMedianaData.files[0];
+        // const media = 0;
+        const fileReader = new FileReader();
+        fileReader.onload = ()=>{
+            //obtiene el resultado de leer el archivo
+            const fileRead = fileReader.result;
+            //procesa el archivo leido 
+            // y retorna un array de strings con cada 
+            //elemento
+            const dataProcessed = processData(fileRead);
+            //convierte un array de strings a uno de enteros
+            const dataNumber = arrayToInt(dataProcessed);
+            //ordenar los datos 
+            const orderedData = quickSort(dataNumber);
+            //retorna el promedio de los datos de un array 
+            //pasado como parametro
+            const mediana = calculateMediana(orderedData);
+            // console.log(media);
+            medianaResult.innerHTML = `<p> La mediana de tus datos es: ${mediana}</p>`;
+            // console.log(quickSort(dataNumber));
+        }
+        fileReader.readAsText(dataFile);
+    }
+});
+
+function calculateMediana(data){
+    const elementsCount = data.length;
+    const centerValueIndex = parseInt(elementsCount / 2); 
+    if((elementsCount % 2) === 0){
+        const centerValue = data[centerValueIndex];
+        const rightValue = data[centerValueIndex + 1];
+        const avg = calculateMedia([centerValue, rightValue]);
+        return avg;
+    } else{
+        return data[centerValueIndex]; 
+    }
+}
+
 function calculateMedia(data){
     const elementsCount = data.length;
     let sum = 0;
