@@ -47,7 +47,7 @@ body{
     /* grid-template-rows: 1fr; */
 }
 
-.media, .mediana{
+.media, .mediana, .moda{
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;

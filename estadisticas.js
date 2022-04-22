@@ -57,6 +57,52 @@ btnMediana.addEventListener('click',()=>{
     }
 });
 
+const btnModa = document.getElementById('btn-moda');
+btnModa.addEventListener('click',()=>{
+    const inputModaData = document.getElementById('moda-data');
+    const modaResult = document.getElementById('moda-result');
+    if(inputModaData.files[0]){
+        const dataFile = inputModaData.files[0];
+        // const media = 0;
+        const fileReader = new FileReader();
+        fileReader.onload = ()=>{
+            //obtiene el resultado de leer el archivo
+            const fileRead = fileReader.result;
+            //procesa el archivo leido 
+            // y retorna un array de strings con cada 
+            //elemento
+            const dataProcessed = processData(fileRead);
+            //convierte un array de strings a uno de enteros
+            const dataNumber = arrayToInt(dataProcessed);
+            //ordenar los datos 
+            // const orderedData = quickSort(dataNumber);
+            //retorna el promedio de los datos de un array 
+            //pasado como parametro
+            const moda = calculateModa(dataNumber);
+            // console.log(media);
+            modaResult.innerHTML = `<p> La mediana de tus datos es: ${moda[0]}</p>`;
+            // console.log(quickSort(dataNumber));
+        }
+        fileReader.readAsText(dataFile);
+    }
+});
+
+function calculateModa(data){
+    const dataCount = {};
+    data.map((elemt)=>{
+        if(dataCount[elemt]){
+            dataCount[elemt] += 1;
+        }else{
+            dataCount[elemt] = 1;
+        }
+    });
+    const result = Object.entries(dataCount).sort((elemA, elemB)=>{
+        console.log(`${elemA} -> ${elemB}`);
+        return elemA[1] - elemB[1];
+    });
+    return result[result.length - 1];
+}
+
 function calculateMediana(data){
     const elementsCount = data.length;
     const centerValueIndex = parseInt(elementsCount / 2); 
