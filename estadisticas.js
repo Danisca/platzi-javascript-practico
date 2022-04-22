@@ -1,89 +1,26 @@
 
-const btnMedia = document.getElementById('btn-media');
-btnMedia.addEventListener('click',()=>{
-    const inputData = document.getElementById('media-data');
-    const mediaResult = document.getElementById('media-result');
+const btnCalc = document.getElementById('btn-calc');
+btnCalc.addEventListener('click',()=>{
+    const inputData = document.getElementById('data');
     if(inputData.files[0]){
-        const dataFile = inputData.files[0];
-        // const media = 0;
+        const file = inputData.files[0];
         const fileReader = new FileReader();
+        const resultContainer = document.getElementById('result');
         fileReader.onload = ()=>{
-            //obtiene el resultado de leer el archivo
             const fileRead = fileReader.result;
-            //procesa el archivo leido 
-            // y retorna un array de strings con cada 
-            //elemento
-            const dataProcessed = processData(fileRead);
-            //convierte un array de strings a uno de enteros
-            const dataNumber = arrayToInt(dataProcessed);
-            //retorna el promedio de los datos de un array 
-            //pasado como parametro
-            const media = calculateMedia(dataNumber);
-            // console.log(media);
-            mediaResult.innerHTML = `<p> La media aritmetica de tus datos es: ${media}</p>`;
-            console.log(quickSort(dataNumber));
-        }
-        fileReader.readAsText(dataFile);
-    }
-});
+            const dataAsArray = processData(fileRead);
+            const dataAsIntArray = arrayToInt(dataAsArray);
+            const orderedData = quickSort(dataAsIntArray);
+            
+            const media = calculateMedia(orderedData);//retorna un unico valor
+            const mediana = calculateMediana(orderedData);//retorna un unico valor
+            const moda = calculateModa(dataAsIntArray);//retorna un array con dos elementos[data,frecuencia]
 
-const btnMediana = document.getElementById('btn-mediana');
-btnMediana.addEventListener('click',()=>{
-    const inputMedianaData = document.getElementById('mediana-data');
-    const medianaResult = document.getElementById('mediana-result');
-    if(inputMedianaData.files[0]){
-        const dataFile = inputMedianaData.files[0];
-        // const media = 0;
-        const fileReader = new FileReader();
-        fileReader.onload = ()=>{
-            //obtiene el resultado de leer el archivo
-            const fileRead = fileReader.result;
-            //procesa el archivo leido 
-            // y retorna un array de strings con cada 
-            //elemento
-            const dataProcessed = processData(fileRead);
-            //convierte un array de strings a uno de enteros
-            const dataNumber = arrayToInt(dataProcessed);
-            //ordenar los datos 
-            const orderedData = quickSort(dataNumber);
-            //retorna el promedio de los datos de un array 
-            //pasado como parametro
-            const mediana = calculateMediana(orderedData);
-            // console.log(media);
-            medianaResult.innerHTML = `<p> La mediana de tus datos es: ${mediana}</p>`;
-            // console.log(quickSort(dataNumber));
+            resultContainer.innerHTML = `<p> La media de tus datos es: ${media}</p>`;
+            resultContainer.innerHTML += `<p> La mediana de tus datos es: ${mediana}</p>`;
+            resultContainer.innerHTML += `<p> La moda de tus datos es: ${moda[0]} con ${moda[1]}</p>`;
         }
-        fileReader.readAsText(dataFile);
-    }
-});
-
-const btnModa = document.getElementById('btn-moda');
-btnModa.addEventListener('click',()=>{
-    const inputModaData = document.getElementById('moda-data');
-    const modaResult = document.getElementById('moda-result');
-    if(inputModaData.files[0]){
-        const dataFile = inputModaData.files[0];
-        // const media = 0;
-        const fileReader = new FileReader();
-        fileReader.onload = ()=>{
-            //obtiene el resultado de leer el archivo
-            const fileRead = fileReader.result;
-            //procesa el archivo leido 
-            // y retorna un array de strings con cada 
-            //elemento
-            const dataProcessed = processData(fileRead);
-            //convierte un array de strings a uno de enteros
-            const dataNumber = arrayToInt(dataProcessed);
-            //ordenar los datos 
-            // const orderedData = quickSort(dataNumber);
-            //retorna el promedio de los datos de un array 
-            //pasado como parametro
-            const moda = calculateModa(dataNumber);
-            // console.log(media);
-            modaResult.innerHTML = `<p> La mediana de tus datos es: ${moda[0]}</p>`;
-            // console.log(quickSort(dataNumber));
-        }
-        fileReader.readAsText(dataFile);
+        fileReader.readAsText(file);
     }
 });
 
@@ -97,22 +34,26 @@ function calculateModa(data){
         }
     });
     const result = Object.entries(dataCount).sort((elemA, elemB)=>{
-        console.log(`${elemA} -> ${elemB}`);
+        // console.log(`${elemA} -> ${elemB}`);
         return elemA[1] - elemB[1];
     });
+    console.log(result);
     return result[result.length - 1];
 }
 
 function calculateMediana(data){
     const elementsCount = data.length;
     const centerValueIndex = parseInt(elementsCount / 2); 
+    const orderData = data.sort((a,b)=>{
+        return a - b;
+    });
     if((elementsCount % 2) === 0){
-        const centerValue = data[centerValueIndex];
-        const rightValue = data[centerValueIndex + 1];
+        const centerValue = orderData[centerValueIndex];
+        const rightValue = orderData[centerValueIndex + 1];
         const avg = calculateMedia([centerValue, rightValue]);
         return avg;
     } else{
-        return data[centerValueIndex]; 
+        return orderData[centerValueIndex]; 
     }
 }
 
@@ -145,16 +86,22 @@ function arrayToInt(arr){
     //especificamente a float
     const result = [];
     try {
-        arr.forEach( (element) =>{
-            result.push(parseFloat(element));
-        }
-        );
+            arr.forEach( (element) =>{
+                result.push(parseFloat(element));
+            });
         return result;
 
     } catch (error) {
         console.log(error);
         return error;
     }
+}
+
+function orderArray(arr){
+    const orderArray = arr.sort((a,b)=>{
+        return a - b;
+    })
+    return orderArray;
 }
 
 //algoritmo de ordenamiento

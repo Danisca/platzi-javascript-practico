@@ -40,23 +40,28 @@ body{
 
 .main{
     display: grid;
-    /* grid-template-columns: auto auto; */
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     padding: 0 12px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
     /* grid-template-rows: 1fr; */
 }
 
-.media, .mediana, .moda{
+.media, .mediana, .moda, .calculos{
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto;
+    /* grid-template-rows: auto; */
     margin-top: 32px;
     gap: 16px;
     box-shadow: lightgray 5px 6px 8px;
     border: 1px solid cadetblue;
     border-radius: 6px;
     padding: 12px;
+}
+
+.calculos{
+    grid-area: 2/2/2/2;
+    margin-bottom: 12px;
 }
 
 .theory-body{
@@ -85,11 +90,13 @@ body{
     margin-bottom: 32px;
 }
 .form{
+    grid-area: 1/2;
     display: flex;
     flex-direction: column;
     padding: 12px;
     border: 1px solid gainsboro;
-    position: relative;
+    margin: 12px;
+    /* position: relative; */
 }
 .img{
     height: 50px;
