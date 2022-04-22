@@ -10,13 +10,13 @@ btnCalc.addEventListener('click',()=>{
             const fileRead = fileReader.result;
             const dataAsArray = processData(fileRead);
             const dataAsIntArray = arrayToInt(dataAsArray);
-            const orderedData = quickSort(dataAsIntArray);
+            // const orderedData = quickSort(dataAsIntArray);
             
-            const media = calculateMedia(orderedData);//retorna un unico valor
-            const mediana = calculateMediana(orderedData);//retorna un unico valor
+            const media = calculateMedia(dataAsIntArray);//retorna un unico valor
+            const mediana = calculateMediana(dataAsIntArray);//retorna un unico valor
             const moda = calculateModa(dataAsIntArray);//retorna un array con dos elementos[data,frecuencia]
 
-            resultContainer.innerHTML = `<p> La media de tus datos es: ${media}</p>`;
+            resultContainer.innerHTML = `<p> La media de tus datos es: ${media.toFixed(3)}</p>`;
             resultContainer.innerHTML += `<p> La mediana de tus datos es: ${mediana}</p>`;
             resultContainer.innerHTML += `<p> La moda de tus datos es: ${moda[0]} con ${moda[1]}</p>`;
         }
