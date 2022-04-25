@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis salarial | Taller #4
+    </title>
+    <link rel="stylesheet" href="./salarios.css">
+</head>
+<body>
+    <nav class="nav">
+        <p>Curso Practico de JavaScript Taller #4</p>
+    </nav>
+    <header class="header">
+        <h2>Analisis: calcula la Media, Mediana y la Moda tanto general como del 10% mas alto y 10% mas bajo.</h2>
+    </header>
+    <main class="main">
+        <section class="data">
+            <form action="#" class="form" id="frm">
+                <div>
+                    <label for="data">
+                        Carga tus datos en formato .csv:
+                    </label>
+                    <input type="file" name="data" id="data" accept=".csv">
+
+                </div>
+                <div class="buttons">
+                    <button type="button" name="btn-calc" id="btn-calc">
+                        Calcular
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="results">
+            <div class="result-container">
+                <div id="result">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./salariosData.js"></script>
+    <script src="./salarios.js"></script>
+</body>
+</html>
