@@ -30,3 +30,9 @@ Curso practico de js
 - Tercer paso: Crear funciones
 
 - Cuarto paso: integrar JS y html
+
+## Taller #4: Analisis estadistico de salarios
+
+- Tercer paso: Crear funciones
+
+- Cuarto paso: integrar JS y html
